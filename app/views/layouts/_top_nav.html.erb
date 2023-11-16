@@ -60,8 +60,13 @@
           </ul>
         </li>
         <li class="nav-item end-0">
+        <%if cart.size > 0 %>
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
+        <%else%>
+          <h4>No items in cart<h4> <%= fa_icon "shopping-cart" %>
+          My Cart (<%= cart.size %>)
+        <%end %>
         </li>
       </ul>
     </div>
@@ -83,6 +88,5 @@ const gnr = () => {
   };
   const title = document.querySelector("header.hero");
   title.addEventListener("dblclick", gnr);
-  
 })()
   </script>

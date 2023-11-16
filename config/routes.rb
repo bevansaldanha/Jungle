@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'pages/index'
+  get 'pages/info'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]

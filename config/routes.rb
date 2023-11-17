@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'categories/index'
+  end
   get 'pages/index'
   get 'pages/info'
   root to: 'products#index'
@@ -17,6 +20,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories
+
   end
 
   resources :about, only: [:index]
